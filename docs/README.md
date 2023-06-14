@@ -1,5 +1,5 @@
 <h1>
-  <a href="https://https://github.com/prefix-dev/pixi/">
+  <a href="https://github.com/prefix-dev/pixi/">
     <img alt="banner" src="https://github.com/prefix-dev/pixi/assets/4995967/2f45b4a8-2976-4f06-bc88-9825c282df84">
   </a>
 </h1>
@@ -138,8 +138,6 @@ The cli looks as follows:
 
 ```bash
 ➜ pixi -h
-A package management and workflow tool
-
 Usage: pixi [COMMAND]
 
 Commands:
@@ -151,8 +149,7 @@ Commands:
   help        Print this message or the help of the given subcommand(s)
 
 Options:
-  -h, --help     Print help
-  -V, --version  Print version
+  -h, --help  Print help
 ```
 
 ## Creating a pixi project
