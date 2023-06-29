@@ -59,26 +59,32 @@ Some notable features that we have in the pipeline are:
 * Improve docs, examples and user experience
 
 # Installation
+
 You can install `pixi` as a binary from the releases.
 `pixi` can be installed on macOS, Linux, and Windows.
 The provided scripts will automatically download the latest version of `pixi`, extract it, and move the `pixi` binary to `~/.pixi/bin`.
 If this directory does not already exist, the script will create it.
 
 ## macOS and Linux
+
 To install Pixi on macOS and Linux, open a terminal and run the following command:
+
 ```bash
 curl -fsSL https://raw.githubusercontent.com/prefix-dev/pixi/main/install/install.sh | bash
 ```
-The script will also update your ~/.bash_profile to include ~/.pixi/bin in your PATH, allowing you to invoke the pixi command from anywhere.
+
+The script will also update your `~/.bash_profile` to include `~/.pixi/bin` in your `PATH`, allowing you to invoke the pixi command from anywhere.
 You might need to restart your terminal or source your shell for the changes to take effect.
 
 ## Windows
+
 To install Pixi on Windows, open a PowerShell terminal (you may need to run it as an administrator) and run the following command:
 
 ```powershell
 iwr -useb https://raw.githubusercontent.com/prefix-dev/pixi/main/install/install.ps1 | iex
 ```
-The script will inform you once the installation is successful and add the ~/.pixi/bin directory to your PATH, which will allow you to run the pixi command from any location.
+
+The script will inform you once the installation is successful and add the `~/.pixi/bin` directory to your `PATH`, which will allow you to run the pixi command from any location.
 
 ## Install from source
 
@@ -86,32 +92,37 @@ The script will inform you once the installation is successful and add the ~/.pi
 tested with cargo.
 To start using `pixi` from a source build run:
 
-```shell
+```bash
 cargo install --locked --git https://github.com/prefix-dev/pixi.git
 ```
 
 or when you want to make changes use:
 
-```shell
+```bash
 cargo build
 cargo test
 ```
 
 If you have any issues building because of the dependency on `rattler` checkout
-it's [compile steps](https://github.com/mamba-org/rattler/tree/main#give-it-a-try)
+it's [compile steps](https://github.com/mamba-org/rattler/tree/main#give-it-a-try).
 
 ## Uninstall
+
 To uninstall the pixi binary should be removed.
 Delete `pixi` from the `$PIXI_DIR` which is default to `~/.pixi/bin/pixi`
 
 So on linux its:
+
 ```shell
 rm ~/.pixi/bin/pixi
 ```
-and on windows:
-```shell
+
+and on Windows:
+
+```bash
 $PIXI_BIN = "$Env:LocalAppData\pixi\bin\pixi"; Remove-Item -Path $PIXI_BIN
 ```
+
 After this command you can still use the tools you installed with `pixi`.
 To remove these as well just remove the whole `~/.pixi` directory and remove the directory from your path.
 
@@ -119,8 +130,8 @@ To remove these as well just remove the whole `~/.pixi` directory and remove the
 
 To get autocompletion run:
 
-```shell
-# On unix (MacOS or Linux), pick your shell (use `echo $SHELL` to find the shell you are using.):
+```bash
+# On unix (macOS or Linux), pick your shell (use `echo $SHELL` to find the shell you are using.):
 echo 'eval "$(pixi completion --shell bash)"' >> ~/.bashrc
 echo 'eval "$(pixi completion --shell zsh)"' >> ~/.zshrc
 echo 'pixi completion --shell fish | source' >> ~/.config/fish/config.fish
@@ -165,13 +176,13 @@ Options:
 
 Initialize a new project and navigate to the project directory
 
-```
+```bash
 pixi init myproject && cd myproject
 ```
 
 Add the dependencies you want to use
 
-```
+```bash
 pixi add cowpy
 ```
 
@@ -182,12 +193,13 @@ pixi run cowpy "Thanks for using pixi"
 ```
 
 Activate a shell in the environment
-```shell
+
+```bash
 pixi shell
 cowpy "Thanks for using pixi"
 ```
 
-For more information check [the documentation](getting_started.md#basics-of-the-configuration-file)
+For more information check [the documentation](getting_started.md#basics-of-the-configuration-file).
 
 ## Installing a conda package globally
 
@@ -199,9 +211,8 @@ pixi global install cowpy
 ```
 
 For more examples
-check [the documentation](./examples.md#global-package-installation-in-isolation)
+check [the documentation](./examples.md#global-package-installation-in-isolation).
 
-<a name="contributing"></a>
 # Contributing 😍
 
 We would absolutely love for you to contribute to `pixi`!
