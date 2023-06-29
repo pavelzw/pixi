@@ -60,12 +60,34 @@ Some notable features that we have in the pipeline are:
 
 # Installation
 
+## From your package manager
+
+### Homebrew
+
+You can install Pixi using Homebrew with the [unofficial pixi formula](https://github.com/pavelzw/homebrew-pavelzw/blob/main/Formula/pixi.rb):
+
+```bash
+brew install pavelzw/pavelzw/pixi
+```
+
+### Conda-forge
+
+You can install Pixi using Conda with the [pixi-feedstock](https://github.com/conda-forge/pixi-feedstock):
+
+```bash
+micromamba install -c conda-forge pixi
+mamba install -c conda-forge pixi
+conda install -c conda-forge pixi
+```
+
+## Official binaries
+
 You can install `pixi` as a binary from the releases.
 `pixi` can be installed on macOS, Linux, and Windows.
 The provided scripts will automatically download the latest version of `pixi`, extract it, and move the `pixi` binary to `~/.pixi/bin`.
 If this directory does not already exist, the script will create it.
 
-## macOS and Linux
+### macOS and Linux
 
 To install Pixi on macOS and Linux, open a terminal and run the following command:
 
@@ -76,7 +98,7 @@ curl -fsSL https://raw.githubusercontent.com/prefix-dev/pixi/main/install/instal
 The script will also update your `~/.bash_profile` to include `~/.pixi/bin` in your `PATH`, allowing you to invoke the pixi command from anywhere.
 You might need to restart your terminal or source your shell for the changes to take effect.
 
-## Windows
+### Windows
 
 To install Pixi on Windows, open a PowerShell terminal (you may need to run it as an administrator) and run the following command:
 
@@ -126,7 +148,7 @@ $PIXI_BIN = "$Env:LocalAppData\pixi\bin\pixi"; Remove-Item -Path $PIXI_BIN
 After this command you can still use the tools you installed with `pixi`.
 To remove these as well just remove the whole `~/.pixi` directory and remove the directory from your path.
 
-### Autocompletion
+## Autocompletion
 
 To get autocompletion run:
 
