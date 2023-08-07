@@ -13,7 +13,16 @@ ARCH=$(uname -m)
 if [[ $PLATFORM == "Darwin" ]]; then
   PLATFORM="apple-darwin"
 elif [[ $PLATFORM == "Linux" ]]; then
-  PLATFORM="unknown-linux-musl"
+  ldd_version=$(ldd --version 2>&1 | head -n 1)
+  if echo "$ldd_version" | grep -q "GNU"; then
+    libc=gnu
+  elif echo "$ldd_version" | grep -q "musl"; then
+    libc=musl
+  else
+    echo "unknown libc version: $libc"
+    exit 1
+  fi
+  PLATFORM="unknown-linux-$libc"
 fi
 
 if [[ $ARCH == "arm64" ]] || [[ $ARCH == "aarch64" ]]; then
