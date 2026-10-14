@@ -440,7 +440,7 @@ mod test {
             let mut package_record = PackageRecord::new(
                 PackageName::new_unchecked(name),
                 Version::from_str(version).unwrap(),
-                "0".to_string(),
+                "0".parse().unwrap(),
             );
             package_record.timestamp = Some(
                 "2020-01-01T00:00:00Z"
